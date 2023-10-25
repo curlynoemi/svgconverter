@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to SVG</title>
+
+    <style>
+        * {
+            font-family: Arial;
+            text-align: center;
+            background-color: #fff;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        main {
+            width: 50%;
+            text-align: center;
+        }
+        h1 {
+            color: #ff7a7a;
+        }
+        #svgCode {
+            width: calc(100% - 20px);
+            height: 150px;
+            margin: 10px;
+            padding: 10px;
+            border: 1.5px solid #bbb;
+            border-radius: 20px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        a {
+            background-color: #ff7a7a;
+            border: none;
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 10px;
+            color: #fff;
+        }
+        #tutorial {
+            color: #888;
+            background-color: #fff;
+            border: 1.5px solid #888;
+        }
+        a:hover {
+            opacity: 0.8;
+        }
+        .button-container {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <h1>HTML to SVG</h1>
+            <form id="svgForm">
+                <textarea id="svgCode" rows="10" cols="50" required></textarea><br>
+                <div class="button-container">
+                    <a href="#" id="convertLink">Convert and Download SVG</a>
+                    <a href="https://github.com/curlynoemi/svgconverter/tree/main#how-to-download-svg-from-flaticon-for-free:~:text=How%20to%20download%20SVG%20from%20Flaticon%20for%20Free" id="tutorial">Tutorial Flaticon</a>
+                    <a href="https://github.com/curlynoemi/svgconverter" id="tutorial">Github</a>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('convertLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            const svgCode = document.getElementById('svgCode').value;
+            const downloadLink = document.createElement('a');
+            const blob = new Blob([svgCode], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            downloadLink.href = url;
+            downloadLink.download = 'icon.svg';
+            downloadLink.click();
+        });
+    </script>
+</body>
+</html>
