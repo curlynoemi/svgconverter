@@ -1,6 +1,9 @@
 # SVG CONVERTER (HTML to SVG)
 Convert your HTML code to an SVG ready to download.
 
+## How to use
+Paste you svg code in the textbox and press the button `Convert and Download SVG`. The end. As easy as that.
+
 ## How to download SVG from Flaticon for Free
 1. Go to [Flaticon.com](https://flaticon.com)
 2. Search for the icon you want and click on it.
